@@ -803,7 +803,7 @@ def create_ui(config, theme_name="Ocean"):
                     )
                     llm_model_name = gr.Dropdown(
                         label="Model Name",
-                        choices=utils.model_names['openai'],
+                        choices=utils.model_names[config['llm_provider']],  # Use provider from config
                         value=config['llm_model_name'],
                         interactive=True,
                         allow_custom_value=True,  # Allow users to input custom model names
