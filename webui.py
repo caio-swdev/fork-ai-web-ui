@@ -993,8 +993,17 @@ def create_ui(config, theme_name="Ocean"):
             )
 
             # Run button click handler
+            async def log_run_click(*args):
+                logger.info("🚦🚦🚦 Run button clicked with parameters:")
+                logger.info(f"  Agent Type: {args[0]}")
+                logger.info(f"  LLM Provider: {args[1]}")
+                logger.info(f"  LLM Model: {args[2]}")
+                logger.info(f"  Task: {args[16]}")
+                async for result in run_with_stream(*args):
+                    yield result
+
             run_button.click(
-                fn=run_with_stream,
+                fn=log_run_click,
                 inputs=[
                     agent_type, llm_provider, llm_model_name, llm_num_ctx, llm_temperature, llm_base_url,
                     llm_api_key,
