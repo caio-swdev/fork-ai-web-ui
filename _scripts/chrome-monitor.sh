@@ -1,0 +1,1 @@
+while true; do clear && sudo lsof -i :9222; sleep 5; done

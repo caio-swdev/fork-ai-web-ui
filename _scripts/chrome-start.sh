@@ -1,0 +1,1 @@
+nohup google-chrome --remote-debugging-port=9222 > /dev/null 2>&1 &

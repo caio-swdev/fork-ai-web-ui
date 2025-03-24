@@ -190,3 +190,9 @@ data/
 
 #
 note.md
+
+# Chrome config files
+.config/google-chrome/
+
+# Never track home directory
+~/
